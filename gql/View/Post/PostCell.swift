@@ -15,7 +15,8 @@ struct PostCell: View {
             if let post = post {
                 VStack {
                     Text(post.content)
-                        .font(.body)
+                        .font(.custom("kkp", fixedSize: 15))
+                        .foregroundColor(Color(hex: "#3E3E3E"))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal, 23)
                         .padding(.top, 18)
@@ -23,6 +24,7 @@ struct PostCell: View {
                     if let images = post.images {
                         SDGridImageView(images: images)
                             .padding(.horizontal, 16)
+                            .padding(.bottom, 7)
                     }
                     if let id = post.subject?.id {
                         HStack {
@@ -31,6 +33,14 @@ struct PostCell: View {
                                 case "0x19198":
                                     Label {
                                         Text("1px life")
+                                            .fontWeight(.bold)
+                                    } icon: {
+                                        Image(systemName: "message")
+                                    }
+                                    .font(.caption)
+                                case "0x1ae65":
+                                    Label {
+                                        Text("板上钉钉")
                                             .fontWeight(.bold)
                                     } icon: {
                                         Image(systemName: "message")
@@ -47,22 +57,40 @@ struct PostCell: View {
                                     .font(.caption)
                                 }
                             }
-                            .frame(width: 100, alignment: .leading)
+                            .frame(alignment: .leading)
                             .foregroundColor(Color("SubjectTextColor"))
-                            .padding(.horizontal, 7)
+                            .padding(.horizontal, 10)
                             .padding(.vertical, 7)
                             .background(Color("SubjectBackgroundColor"))
                             .clipShape(RoundedRectangle(cornerRadius: 5))
                             Spacer()
                         }
-                        .padding(.top, 3)
-                        .padding(.horizontal, 27)
+                        .padding(.bottom, 7)
+                        .padding(.horizontal, 23)
                     }
                    
                     
                     PostUser(creatorAvatarUrl: post.creator?.avatarImageUrl , creatorName: post.creator?.name, votes:post.votes.totalCount, createAtString: JsonDateFormatter.timeDiffFromNow(previousDate: JsonDateFormatter.shared.instance.date(from: post.createdAt)!))
                         .padding(.horizontal, 27)
-                        
+                        .padding(.bottom, 7)
+                    if let comments = post.trendingComments.nodes {
+                        Group {
+                            VStack(spacing: 0) {
+                                ForEach(comments, id: \.id) { comment in
+                                    CommentCell(creatorAvatarUrl: comment.creator?.avatarImageUrl, creatorName: comment.creator?.name, content: comment.content, votes: comment.votes.totalCount, createAtString: JsonDateFormatter.timeDiffFromNow(previousDate: JsonDateFormatter.shared.instance.date(from: comment.createdAt)!))
+                                }
+                            }
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            
+                            
+                            
+                        }
+                        .padding(.horizontal, 14)
+                        .padding(.bottom, 14)
+//                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                    }
+                    
+                    
                         
                    
                 }

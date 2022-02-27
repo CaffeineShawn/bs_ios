@@ -32,9 +32,6 @@ struct PostCellView: View {
                 }
                 Spacer()
             }
-            
-            
-            
         }
         .background(in: RoundedRectangle(cornerRadius: 10))
         .padding(10)

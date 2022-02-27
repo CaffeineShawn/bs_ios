@@ -121,10 +121,10 @@ public final class PostWithRelayQuery: GraphQLQuery {
             images
             creator {
               __typename
-              avatarImageUrl
               name
               userId
               openId
+              avatarImageUrl
             }
             createdAt
             id
@@ -136,13 +136,15 @@ public final class PostWithRelayQuery: GraphQLQuery {
               __typename
               nodes {
                 __typename
+                id
                 content
+                createdAt
                 creator {
                   __typename
-                  avatarImageUrl
                   name
                   userId
                   openId
+                  avatarImageUrl
                 }
                 votes {
                   __typename
@@ -463,10 +465,10 @@ public final class PostWithRelayQuery: GraphQLQuery {
             public static var selections: [GraphQLSelection] {
               return [
                 GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-                GraphQLField("avatarImageUrl", type: .nonNull(.scalar(String.self))),
                 GraphQLField("name", type: .nonNull(.scalar(String.self))),
                 GraphQLField("userId", type: .nonNull(.scalar(String.self))),
                 GraphQLField("openId", type: .nonNull(.scalar(String.self))),
+                GraphQLField("avatarImageUrl", type: .nonNull(.scalar(String.self))),
               ]
             }
 
@@ -476,8 +478,8 @@ public final class PostWithRelayQuery: GraphQLQuery {
               self.resultMap = unsafeResultMap
             }
 
-            public init(avatarImageUrl: String, name: String, userId: String, openId: String) {
-              self.init(unsafeResultMap: ["__typename": "User", "avatarImageUrl": avatarImageUrl, "name": name, "userId": userId, "openId": openId])
+            public init(name: String, userId: String, openId: String, avatarImageUrl: String) {
+              self.init(unsafeResultMap: ["__typename": "User", "name": name, "userId": userId, "openId": openId, "avatarImageUrl": avatarImageUrl])
             }
 
             public var __typename: String {
@@ -486,16 +488,6 @@ public final class PostWithRelayQuery: GraphQLQuery {
               }
               set {
                 resultMap.updateValue(newValue, forKey: "__typename")
-              }
-            }
-
-            /// 用户头像链接
-            public var avatarImageUrl: String {
-              get {
-                return resultMap["avatarImageUrl"]! as! String
-              }
-              set {
-                resultMap.updateValue(newValue, forKey: "avatarImageUrl")
               }
             }
 
@@ -526,6 +518,16 @@ public final class PostWithRelayQuery: GraphQLQuery {
               }
               set {
                 resultMap.updateValue(newValue, forKey: "openId")
+              }
+            }
+
+            /// 用户头像链接
+            public var avatarImageUrl: String {
+              get {
+                return resultMap["avatarImageUrl"]! as! String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "avatarImageUrl")
               }
             }
           }
@@ -613,7 +615,9 @@ public final class PostWithRelayQuery: GraphQLQuery {
               public static var selections: [GraphQLSelection] {
                 return [
                   GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+                  GraphQLField("id", type: .nonNull(.scalar(String.self))),
                   GraphQLField("content", type: .nonNull(.scalar(String.self))),
+                  GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
                   GraphQLField("creator", type: .object(Creator.selections)),
                   GraphQLField("votes", type: .nonNull(.object(Vote.selections))),
                 ]
@@ -625,8 +629,8 @@ public final class PostWithRelayQuery: GraphQLQuery {
                 self.resultMap = unsafeResultMap
               }
 
-              public init(content: String, creator: Creator? = nil, votes: Vote) {
-                self.init(unsafeResultMap: ["__typename": "Comment", "content": content, "creator": creator.flatMap { (value: Creator) -> ResultMap in value.resultMap }, "votes": votes.resultMap])
+              public init(id: String, content: String, createdAt: String, creator: Creator? = nil, votes: Vote) {
+                self.init(unsafeResultMap: ["__typename": "Comment", "id": id, "content": content, "createdAt": createdAt, "creator": creator.flatMap { (value: Creator) -> ResultMap in value.resultMap }, "votes": votes.resultMap])
               }
 
               public var __typename: String {
@@ -638,12 +642,30 @@ public final class PostWithRelayQuery: GraphQLQuery {
                 }
               }
 
+              public var id: String {
+                get {
+                  return resultMap["id"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "id")
+                }
+              }
+
               public var content: String {
                 get {
                   return resultMap["content"]! as! String
                 }
                 set {
                   resultMap.updateValue(newValue, forKey: "content")
+                }
+              }
+
+              public var createdAt: String {
+                get {
+                  return resultMap["createdAt"]! as! String
+                }
+                set {
+                  resultMap.updateValue(newValue, forKey: "createdAt")
                 }
               }
 
@@ -673,10 +695,10 @@ public final class PostWithRelayQuery: GraphQLQuery {
                 public static var selections: [GraphQLSelection] {
                   return [
                     GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-                    GraphQLField("avatarImageUrl", type: .nonNull(.scalar(String.self))),
                     GraphQLField("name", type: .nonNull(.scalar(String.self))),
                     GraphQLField("userId", type: .nonNull(.scalar(String.self))),
                     GraphQLField("openId", type: .nonNull(.scalar(String.self))),
+                    GraphQLField("avatarImageUrl", type: .nonNull(.scalar(String.self))),
                   ]
                 }
 
@@ -686,8 +708,8 @@ public final class PostWithRelayQuery: GraphQLQuery {
                   self.resultMap = unsafeResultMap
                 }
 
-                public init(avatarImageUrl: String, name: String, userId: String, openId: String) {
-                  self.init(unsafeResultMap: ["__typename": "User", "avatarImageUrl": avatarImageUrl, "name": name, "userId": userId, "openId": openId])
+                public init(name: String, userId: String, openId: String, avatarImageUrl: String) {
+                  self.init(unsafeResultMap: ["__typename": "User", "name": name, "userId": userId, "openId": openId, "avatarImageUrl": avatarImageUrl])
                 }
 
                 public var __typename: String {
@@ -696,16 +718,6 @@ public final class PostWithRelayQuery: GraphQLQuery {
                   }
                   set {
                     resultMap.updateValue(newValue, forKey: "__typename")
-                  }
-                }
-
-                /// 用户头像链接
-                public var avatarImageUrl: String {
-                  get {
-                    return resultMap["avatarImageUrl"]! as! String
-                  }
-                  set {
-                    resultMap.updateValue(newValue, forKey: "avatarImageUrl")
                   }
                 }
 
@@ -736,6 +748,16 @@ public final class PostWithRelayQuery: GraphQLQuery {
                   }
                   set {
                     resultMap.updateValue(newValue, forKey: "openId")
+                  }
+                }
+
+                /// 用户头像链接
+                public var avatarImageUrl: String {
+                  get {
+                    return resultMap["avatarImageUrl"]! as! String
+                  }
+                  set {
+                    resultMap.updateValue(newValue, forKey: "avatarImageUrl")
                   }
                 }
               }
@@ -871,10 +893,10 @@ public final class PostQuery: GraphQLQuery {
         images
         creator {
           __typename
-          avatarImageUrl
           name
           userId
           openId
+          avatarImageUrl
         }
         createdAt
         id
@@ -886,13 +908,15 @@ public final class PostQuery: GraphQLQuery {
           __typename
           nodes {
             __typename
+            id
             content
+            createdAt
             creator {
               __typename
-              avatarImageUrl
               name
               userId
               openId
+              avatarImageUrl
             }
             votes {
               __typename
@@ -1112,10 +1136,10 @@ public final class PostQuery: GraphQLQuery {
         public static var selections: [GraphQLSelection] {
           return [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLField("avatarImageUrl", type: .nonNull(.scalar(String.self))),
             GraphQLField("name", type: .nonNull(.scalar(String.self))),
             GraphQLField("userId", type: .nonNull(.scalar(String.self))),
             GraphQLField("openId", type: .nonNull(.scalar(String.self))),
+            GraphQLField("avatarImageUrl", type: .nonNull(.scalar(String.self))),
           ]
         }
 
@@ -1125,8 +1149,8 @@ public final class PostQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(avatarImageUrl: String, name: String, userId: String, openId: String) {
-          self.init(unsafeResultMap: ["__typename": "User", "avatarImageUrl": avatarImageUrl, "name": name, "userId": userId, "openId": openId])
+        public init(name: String, userId: String, openId: String, avatarImageUrl: String) {
+          self.init(unsafeResultMap: ["__typename": "User", "name": name, "userId": userId, "openId": openId, "avatarImageUrl": avatarImageUrl])
         }
 
         public var __typename: String {
@@ -1135,16 +1159,6 @@ public final class PostQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "__typename")
-          }
-        }
-
-        /// 用户头像链接
-        public var avatarImageUrl: String {
-          get {
-            return resultMap["avatarImageUrl"]! as! String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "avatarImageUrl")
           }
         }
 
@@ -1175,6 +1189,16 @@ public final class PostQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "openId")
+          }
+        }
+
+        /// 用户头像链接
+        public var avatarImageUrl: String {
+          get {
+            return resultMap["avatarImageUrl"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "avatarImageUrl")
           }
         }
       }
@@ -1262,7 +1286,9 @@ public final class PostQuery: GraphQLQuery {
           public static var selections: [GraphQLSelection] {
             return [
               GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("id", type: .nonNull(.scalar(String.self))),
               GraphQLField("content", type: .nonNull(.scalar(String.self))),
+              GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
               GraphQLField("creator", type: .object(Creator.selections)),
               GraphQLField("votes", type: .nonNull(.object(Vote.selections))),
             ]
@@ -1274,8 +1300,8 @@ public final class PostQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(content: String, creator: Creator? = nil, votes: Vote) {
-            self.init(unsafeResultMap: ["__typename": "Comment", "content": content, "creator": creator.flatMap { (value: Creator) -> ResultMap in value.resultMap }, "votes": votes.resultMap])
+          public init(id: String, content: String, createdAt: String, creator: Creator? = nil, votes: Vote) {
+            self.init(unsafeResultMap: ["__typename": "Comment", "id": id, "content": content, "createdAt": createdAt, "creator": creator.flatMap { (value: Creator) -> ResultMap in value.resultMap }, "votes": votes.resultMap])
           }
 
           public var __typename: String {
@@ -1287,12 +1313,30 @@ public final class PostQuery: GraphQLQuery {
             }
           }
 
+          public var id: String {
+            get {
+              return resultMap["id"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "id")
+            }
+          }
+
           public var content: String {
             get {
               return resultMap["content"]! as! String
             }
             set {
               resultMap.updateValue(newValue, forKey: "content")
+            }
+          }
+
+          public var createdAt: String {
+            get {
+              return resultMap["createdAt"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "createdAt")
             }
           }
 
@@ -1322,10 +1366,10 @@ public final class PostQuery: GraphQLQuery {
             public static var selections: [GraphQLSelection] {
               return [
                 GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-                GraphQLField("avatarImageUrl", type: .nonNull(.scalar(String.self))),
                 GraphQLField("name", type: .nonNull(.scalar(String.self))),
                 GraphQLField("userId", type: .nonNull(.scalar(String.self))),
                 GraphQLField("openId", type: .nonNull(.scalar(String.self))),
+                GraphQLField("avatarImageUrl", type: .nonNull(.scalar(String.self))),
               ]
             }
 
@@ -1335,8 +1379,8 @@ public final class PostQuery: GraphQLQuery {
               self.resultMap = unsafeResultMap
             }
 
-            public init(avatarImageUrl: String, name: String, userId: String, openId: String) {
-              self.init(unsafeResultMap: ["__typename": "User", "avatarImageUrl": avatarImageUrl, "name": name, "userId": userId, "openId": openId])
+            public init(name: String, userId: String, openId: String, avatarImageUrl: String) {
+              self.init(unsafeResultMap: ["__typename": "User", "name": name, "userId": userId, "openId": openId, "avatarImageUrl": avatarImageUrl])
             }
 
             public var __typename: String {
@@ -1345,16 +1389,6 @@ public final class PostQuery: GraphQLQuery {
               }
               set {
                 resultMap.updateValue(newValue, forKey: "__typename")
-              }
-            }
-
-            /// 用户头像链接
-            public var avatarImageUrl: String {
-              get {
-                return resultMap["avatarImageUrl"]! as! String
-              }
-              set {
-                resultMap.updateValue(newValue, forKey: "avatarImageUrl")
               }
             }
 
@@ -1385,6 +1419,16 @@ public final class PostQuery: GraphQLQuery {
               }
               set {
                 resultMap.updateValue(newValue, forKey: "openId")
+              }
+            }
+
+            /// 用户头像链接
+            public var avatarImageUrl: String {
+              get {
+                return resultMap["avatarImageUrl"]! as! String
+              }
+              set {
+                resultMap.updateValue(newValue, forKey: "avatarImageUrl")
               }
             }
           }

@@ -1,4 +1,4 @@
-
+# Write your query or mutation here
 mutation login($userId: String!, $sign:String!) {
   login(userId:$userId, sign:$sign) {
     token
@@ -16,10 +16,10 @@ query postWithRelay($first:Int, $after: String, $last:Int, $before:String) {
         content
         images
         creator {
-        avatarImageUrl
           name
           userId
           openId
+          avatarImageUrl
         }
         createdAt
         id
@@ -28,12 +28,14 @@ query postWithRelay($first:Int, $after: String, $last:Int, $before:String) {
         }
        trendingComments(first: 3) {
         nodes {
+          id
           content
+          createdAt
           creator {
-          avatarImageUrl
             name
             userId
             openId
+            avatarImageUrl
           }
           votes {
             totalCount
@@ -61,10 +63,10 @@ query post($postId:String!) {
         content
         images
         creator {
-        avatarImageUrl
           name
           userId
           openId
+          avatarImageUrl
         }
         createdAt
         id
@@ -73,12 +75,14 @@ query post($postId:String!) {
         }
        trendingComments(first: 3) {
         nodes {
+          id
           content
+          createdAt
           creator {
-          avatarImageUrl
             name
             userId
             openId
+            avatarImageUrl
           }
           votes {
             totalCount

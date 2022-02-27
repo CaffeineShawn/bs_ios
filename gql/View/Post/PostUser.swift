@@ -17,10 +17,6 @@ struct PostUser: View {
     
     var body: some View {
         HStack(spacing: 0) {
-            
-            
-//            Circle()
-//                .fill(Color.blue)
             Label {
                 Text(creatorName ?? "小白板")
                     .font(.caption)
@@ -53,7 +49,7 @@ struct PostUser: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 23, alignment: .leading)
-        .padding(.bottom, 20)
+
 //        .background(.gray)
     }
 }
