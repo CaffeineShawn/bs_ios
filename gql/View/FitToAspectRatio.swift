@@ -1,0 +1,20 @@
+//
+//  CustomImageViewModifier.swift
+//  gql
+//
+//  Created by Shaw Young on 2022/2/26.
+//
+
+import SwiftUI
+
+struct CustomImageViewModifier: View {
+    var body: some View {
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    }
+}
+
+struct CustomImageViewModifier_Previews: PreviewProvider {
+    static var previews: some View {
+        CustomImageViewModifier()
+    }
+}
