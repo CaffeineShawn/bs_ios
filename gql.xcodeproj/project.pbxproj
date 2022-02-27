@@ -11,6 +11,30 @@
 		0F0C20A527C376F400D6ECA0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0C20A427C376F400D6ECA0 /* ContentView.swift */; };
 		0F0C20A727C376F500D6ECA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0C20A627C376F500D6ECA0 /* Assets.xcassets */; };
 		0F0C20AA27C376F500D6ECA0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0C20A927C376F500D6ECA0 /* Preview Assets.xcassets */; };
+		0F1F0FC427CA05D6007EF7F6 /* FitToAspectRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1F0FC327CA05D6007EF7F6 /* FitToAspectRatio.swift */; };
+		0F1F0FC627CA0700007EF7F6 /* xjp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F1F0FC527CA0700007EF7F6 /* xjp.jpg */; };
+		0F1F0FCD27CA1FC5007EF7F6 /* Queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0F1F0FCC27CA1FC5007EF7F6 /* Queries.graphql */; };
+		0F1F0FCF27CA1FD1007EF7F6 /* Apollo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1F0FCE27CA1FD1007EF7F6 /* Apollo.swift */; };
+		0F23E7CA27C75957003DC0E0 /* CustomImageView.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F23E7C927C75957003DC0E0 /* CustomImageView.swift.swift */; };
+		0F3AA38D27C37C02003AA94F /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 0F3AA38C27C37C02003AA94F /* Apollo */; };
+		0F3AA38F27C37C02003AA94F /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 0F3AA38E27C37C02003AA94F /* ApolloWebSocket */; };
+		0F4635B827C9F1F5006DB55F /* SDGridImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4635B727C9F1F5006DB55F /* SDGridImageView.swift */; };
+		0F48375927C897950097CB68 /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F48375827C897950097CB68 /* CustomNavigationView.swift */; };
+		0F63AE8727C4B2A80033F984 /* PostCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F63AE8627C4B2A80033F984 /* PostCellView.swift */; };
+		0F76A52327CB45FC0069FA5D /* JsonDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F76A52227CB45FC0069FA5D /* JsonDateFormatter.swift */; };
+		0F76A52527CB53A90069FA5D /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F76A52427CB53A90069FA5D /* PostCell.swift */; };
+		0F76A52727CB53CE0069FA5D /* PostUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F76A52627CB53CE0069FA5D /* PostUser.swift */; };
+		0F8D454227C7D4E6009CA7F7 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0F8D454127C7D4E6009CA7F7 /* SDWebImageSwiftUI */; };
+		0F8D454427C7D564009CA7F7 /* SDWebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D454327C7D564009CA7F7 /* SDWebImageView.swift */; };
+		0FA090B527C61CB200AD67D8 /* PostListLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA090B427C61CB100AD67D8 /* PostListLoader.swift */; };
+		0FA090B827C621B100AD67D8 /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA090B727C621B100AD67D8 /* CacheAsyncImage.swift */; };
+		0FD0689727CA3142002BAEA0 /* SinglePostLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD0689627CA3142002BAEA0 /* SinglePostLoader.swift */; };
+		0FD7EB4927C769CC009F5931 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD7EB4827C769CC009F5931 /* CacheManager.swift */; };
+		0FE8479E27C67AB5000A7BA1 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE8479D27C67AB5000A7BA1 /* ImageLoader.swift */; };
+		0FF795A327C3AD81004A959E /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FF795A227C3AD81004A959E /* schema.json */; };
+		0FF795A927C3B0B3004A959E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF795A827C3B0B3004A959E /* API.swift */; };
+		0FF795AE27C3C795004A959E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF795AD27C3C794004A959E /* LoginView.swift */; };
+		0FF795B127C3CF20004A959E /* InfinityPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF795B027C3CF20004A959E /* InfinityPostsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +43,27 @@
 		0F0C20A427C376F400D6ECA0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0F0C20A627C376F500D6ECA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F0C20A927C376F500D6ECA0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0F1F0FC327CA05D6007EF7F6 /* FitToAspectRatio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitToAspectRatio.swift; sourceTree = "<group>"; };
+		0F1F0FC527CA0700007EF7F6 /* xjp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = xjp.jpg; path = ../../../Downloads/xjp.jpg; sourceTree = "<group>"; };
+		0F1F0FCC27CA1FC5007EF7F6 /* Queries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
+		0F1F0FCE27CA1FD1007EF7F6 /* Apollo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo.swift; sourceTree = "<group>"; };
+		0F23E7C927C75957003DC0E0 /* CustomImageView.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift.swift; sourceTree = "<group>"; };
+		0F4635B727C9F1F5006DB55F /* SDGridImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDGridImageView.swift; sourceTree = "<group>"; };
+		0F48375827C897950097CB68 /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
+		0F63AE8627C4B2A80033F984 /* PostCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellView.swift; sourceTree = "<group>"; };
+		0F76A52227CB45FC0069FA5D /* JsonDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDateFormatter.swift; sourceTree = "<group>"; };
+		0F76A52427CB53A90069FA5D /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		0F76A52627CB53CE0069FA5D /* PostUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUser.swift; sourceTree = "<group>"; };
+		0F8D454327C7D564009CA7F7 /* SDWebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDWebImageView.swift; sourceTree = "<group>"; };
+		0FA090B427C61CB100AD67D8 /* PostListLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListLoader.swift; sourceTree = "<group>"; };
+		0FA090B727C621B100AD67D8 /* CacheAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
+		0FD0689627CA3142002BAEA0 /* SinglePostLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePostLoader.swift; sourceTree = "<group>"; };
+		0FD7EB4827C769CC009F5931 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		0FE8479D27C67AB5000A7BA1 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		0FF795A227C3AD81004A959E /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		0FF795A827C3B0B3004A959E /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = gql/API.swift; sourceTree = SOURCE_ROOT; };
+		0FF795AD27C3C794004A959E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		0FF795B027C3CF20004A959E /* InfinityPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinityPostsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F8D454227C7D4E6009CA7F7 /* SDWebImageSwiftUI in Frameworks */,
+				0F3AA38D27C37C02003AA94F /* Apollo in Frameworks */,
+				0F3AA38F27C37C02003AA94F /* ApolloWebSocket in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +99,16 @@
 		0F0C20A127C376F400D6ECA0 /* gql */ = {
 			isa = PBXGroup;
 			children = (
+				0F76A52127CB45ED0069FA5D /* Util */,
+				0FA090B627C6219F00AD67D8 /* Cache */,
+				0FA090B327C619A600AD67D8 /* ViewModel */,
+				0FA090B227C619A100AD67D8 /* View */,
+				0FA090B127C6199100AD67D8 /* Model */,
+				0FF795A227C3AD81004A959E /* schema.json */,
+				0FF795A627C3B03A004A959E /* GraphQL */,
 				0F0C20A227C376F400D6ECA0 /* gqlApp.swift */,
 				0F0C20A427C376F400D6ECA0 /* ContentView.swift */,
+				0F1F0FC527CA0700007EF7F6 /* xjp.jpg */,
 				0F0C20A627C376F500D6ECA0 /* Assets.xcassets */,
 				0F0C20A827C376F500D6ECA0 /* Preview Content */,
 			);
@@ -67,6 +123,83 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		0F76A52127CB45ED0069FA5D /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				0F76A52227CB45FC0069FA5D /* JsonDateFormatter.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		0FA090B127C6199100AD67D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0FA090B227C619A100AD67D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0FF795AC27C3C785004A959E /* Login */,
+				0FF795AF27C3CEB4004A959E /* Post */,
+				0F23E7C927C75957003DC0E0 /* CustomImageView.swift.swift */,
+				0F8D454327C7D564009CA7F7 /* SDWebImageView.swift */,
+				0F48375827C897950097CB68 /* CustomNavigationView.swift */,
+				0F4635B727C9F1F5006DB55F /* SDGridImageView.swift */,
+				0F1F0FC327CA05D6007EF7F6 /* FitToAspectRatio.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0FA090B327C619A600AD67D8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0FA090B427C61CB100AD67D8 /* PostListLoader.swift */,
+				0FE8479D27C67AB5000A7BA1 /* ImageLoader.swift */,
+				0FD0689627CA3142002BAEA0 /* SinglePostLoader.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0FA090B627C6219F00AD67D8 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				0FA090B727C621B100AD67D8 /* CacheAsyncImage.swift */,
+				0FD7EB4827C769CC009F5931 /* CacheManager.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		0FF795A627C3B03A004A959E /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				0FF795A827C3B0B3004A959E /* API.swift */,
+				0F1F0FCC27CA1FC5007EF7F6 /* Queries.graphql */,
+				0F1F0FCE27CA1FD1007EF7F6 /* Apollo.swift */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		0FF795AC27C3C785004A959E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0FF795AD27C3C794004A959E /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		0FF795AF27C3CEB4004A959E /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				0FF795B027C3CF20004A959E /* InfinityPostsView.swift */,
+				0F63AE8627C4B2A80033F984 /* PostCellView.swift */,
+				0F76A52427CB53A90069FA5D /* PostCell.swift */,
+				0F76A52627CB53CE0069FA5D /* PostUser.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +207,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F0C20AD27C376F500D6ECA0 /* Build configuration list for PBXNativeTarget "gql" */;
 			buildPhases = (
+				0F3AA39027C37C2C003AA94F /* Run Script */,
 				0F0C209B27C376F400D6ECA0 /* Sources */,
 				0F0C209C27C376F400D6ECA0 /* Frameworks */,
 				0F0C209D27C376F400D6ECA0 /* Resources */,
@@ -83,6 +217,11 @@
 			dependencies = (
 			);
 			name = gql;
+			packageProductDependencies = (
+				0F3AA38C27C37C02003AA94F /* Apollo */,
+				0F3AA38E27C37C02003AA94F /* ApolloWebSocket */,
+				0F8D454127C7D4E6009CA7F7 /* SDWebImageSwiftUI */,
+			);
 			productName = gql;
 			productReference = 0F0C209F27C376F400D6ECA0 /* gql.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +250,10 @@
 				Base,
 			);
 			mainGroup = 0F0C209627C376F400D6ECA0;
+			packageReferences = (
+				0F3AA38B27C37C02003AA94F /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				0F8D454027C7D4E6009CA7F7 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 0F0C20A027C376F400D6ECA0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,20 +268,62 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F1F0FCD27CA1FC5007EF7F6 /* Queries.graphql in Resources */,
 				0F0C20AA27C376F500D6ECA0 /* Preview Assets.xcassets in Resources */,
+				0FF795A327C3AD81004A959E /* schema.json in Resources */,
+				0F1F0FC627CA0700007EF7F6 /* xjp.jpg in Resources */,
 				0F0C20A727C376F500D6ECA0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F3AA39027C37C2C003AA94F /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\n# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0F0C209B27C376F400D6ECA0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F1F0FC427CA05D6007EF7F6 /* FitToAspectRatio.swift in Sources */,
+				0FA090B527C61CB200AD67D8 /* PostListLoader.swift in Sources */,
+				0F63AE8727C4B2A80033F984 /* PostCellView.swift in Sources */,
+				0F8D454427C7D564009CA7F7 /* SDWebImageView.swift in Sources */,
+				0F48375927C897950097CB68 /* CustomNavigationView.swift in Sources */,
+				0FE8479E27C67AB5000A7BA1 /* ImageLoader.swift in Sources */,
+				0F23E7CA27C75957003DC0E0 /* CustomImageView.swift.swift in Sources */,
+				0FD0689727CA3142002BAEA0 /* SinglePostLoader.swift in Sources */,
+				0F4635B827C9F1F5006DB55F /* SDGridImageView.swift in Sources */,
+				0FD7EB4927C769CC009F5931 /* CacheManager.swift in Sources */,
+				0F76A52727CB53CE0069FA5D /* PostUser.swift in Sources */,
+				0F76A52327CB45FC0069FA5D /* JsonDateFormatter.swift in Sources */,
 				0F0C20A527C376F400D6ECA0 /* ContentView.swift in Sources */,
+				0F76A52527CB53A90069FA5D /* PostCell.swift in Sources */,
+				0FF795A927C3B0B3004A959E /* API.swift in Sources */,
+				0FF795B127C3CF20004A959E /* InfinityPostsView.swift in Sources */,
+				0FF795AE27C3C795004A959E /* LoginView.swift in Sources */,
 				0F0C20A327C376F400D6ECA0 /* gqlApp.swift in Sources */,
+				0F1F0FCF27CA1FD1007EF7F6 /* Apollo.swift in Sources */,
+				0FA090B827C621B100AD67D8 /* CacheAsyncImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +384,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -254,6 +439,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -271,6 +457,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"gql/Preview Content\"";
 				DEVELOPMENT_TEAM = 49XJ9L9WAK;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -300,6 +488,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"gql/Preview Content\"";
 				DEVELOPMENT_TEAM = 49XJ9L9WAK;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -341,6 +531,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0F3AA38B27C37C02003AA94F /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://gitee.com/young-shaw/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.50.0;
+			};
+		};
+		0F8D454027C7D4E6009CA7F7 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0F3AA38C27C37C02003AA94F /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F3AA38B27C37C02003AA94F /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		0F3AA38E27C37C02003AA94F /* ApolloWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F3AA38B27C37C02003AA94F /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloWebSocket;
+		};
+		0F8D454127C7D4E6009CA7F7 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F8D454027C7D4E6009CA7F7 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0F0C209727C376F400D6ECA0 /* Project object */;
 }

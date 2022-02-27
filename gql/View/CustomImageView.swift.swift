@@ -8,13 +8,40 @@
 import SwiftUI
 
 struct CustomImageView_swift: View {
+    @StateObject var imageLoader: ImageLoader
+    
+    init(urlString: String?) {
+        self._imageLoader = StateObject(wrappedValue: ImageLoader(urlString: urlString))
+    }
+    
+    let imageSize: CGFloat = 186
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Group {
+            if imageLoader.image != nil {
+                Image(uiImage: imageLoader.image!)
+                    .scaledToFill()
+                    .frame(width: imageSize, height: imageSize)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+            } else if imageLoader.error != nil {
+                Text(imageLoader.error!)
+                    .foregroundColor(.red)
+                    .frame(width: imageSize, height: imageSize)
+            } else {
+                ProgressView()
+                    .scaledToFill()
+                    .frame(width: imageSize, height: imageSize)
+            }
+        }
+        .onAppear {
+            imageLoader.fetch()
+        }
+
     }
 }
 
 struct CustomImageView_swift_Previews: PreviewProvider {
     static var previews: some View {
-        CustomImageView_swift()
+        CustomImageView_swift(urlString: "https://dev-1306842204.cos.ap-guangzhou.myqcloud.com/defaultAvatars/male.jpg?")
     }
 }

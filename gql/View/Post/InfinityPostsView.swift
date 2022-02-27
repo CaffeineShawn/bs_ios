@@ -10,37 +10,47 @@ import Apollo
 
 struct InfinityPostsView: View {
     
-    @ObservedObject var postLoader = PostLoader()
+    @ObservedObject var postLoader = PostListLoader()
     
     
     var body: some View {
         ZStack {
-            
-            Color(red:246/255.0, green:246/255.0, blue:246/255.0).edgesIgnoringSafeArea(.all)
-            LazyVStack {
-                if postLoader.posts.count == 0 {
-                    Text("No content")
-                } else {
-                    ForEach(postLoader.posts, id: \.node?.id) { post in
-                            if let post = post.node {
-                                PostCellView(post: post)
-                                    .onAppear {
-                                        if post.id == postLoader.posts.last?.node?.id {
-                                            postLoader.fetchPost(endCursor: postLoader.endCursor)
+            ScrollView {
+                LazyVStack {
+                    if postLoader.posts.count == 0 {
+                        Text("No content")
+                    } else {
+                        ForEach(postLoader.posts, id: \.node?.id) { post in
+                                if let post = post.node {
+//                                    PostCell(postId: post.id, content: post.content, images: post.images, creatorName: post.creator?.name ?? "小白板")
+                                    PostCell(post: post)
+                                        .padding(.top, 12)
+                                        .onAppear {
+//                                            print("cache mem size: \(Double(URLCache.shared.currentMemoryUsage) / 100000.0)%")
+//                                            print("cache disk size: \(Double(URLCache.shared.currentDiskUsage) / 100000.0)%")
+                                            if post.id == postLoader.posts.last?.node?.id {
+                                                let _ = postLoader.fetchPost()
+                                            }
                                         }
-                                    }
-                            }
-                        
+                                }
+                            
+                        }
+                    
                     }
-                
                 }
             }
+            .background(Color(red:246/255.0, green:246/255.0, blue:246/255.0).edgesIgnoringSafeArea(.all))
+            .navigationTitle("BlankSpace")
+            .navigationBarTitleDisplayMode(.inline)
             .onAppear {
-                postLoader.fetchPost(endCursor: postLoader.endCursor)
-                print("Cache size: \(URLCache.shared.memoryCapacity / 1024)KB")
+                let _ = postLoader.fetchPost()
                 URLCache.shared.memoryCapacity = 1024*1024*512
+                print("cache mem size: \(URLCache.shared.memoryCapacity / (1024*1024))MB")
+                print("cache disk size: \(URLCache.shared.diskCapacity / (1024*1024))MB")
+
             }
         }
+ 
         
         
         

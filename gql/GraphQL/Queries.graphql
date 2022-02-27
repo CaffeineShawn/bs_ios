@@ -1,0 +1,89 @@
+
+mutation login($userId: String!, $sign:String!) {
+  login(userId:$userId, sign:$sign) {
+    token
+  }
+}
+
+query postWithRelay($first:Int, $after: String, $last:Int, $before:String) {
+  postsWithRelay(first: $first, after: $after, last: $last,  before: $before) {
+    edges {
+      node {
+        subject {
+          id
+          description
+        }
+        content
+        images
+        creator {
+        avatarImageUrl
+          name
+          userId
+          openId
+        }
+        createdAt
+        id
+        votes {
+          totalCount
+        }
+       trendingComments(first: 3) {
+        nodes {
+          content
+          creator {
+          avatarImageUrl
+            name
+            userId
+            openId
+          }
+          votes {
+            totalCount
+          }
+        }
+      }
+      }
+    }
+    
+      pageInfo {
+      startCursor
+      endCursor
+      hasNextPage
+      hasPreviousPage
+    }
+  }
+}
+
+query post($postId:String!) {
+  post(id: $postId) {
+    subject {
+          id
+          description
+        }
+        content
+        images
+        creator {
+        avatarImageUrl
+          name
+          userId
+          openId
+        }
+        createdAt
+        id
+        votes {
+          totalCount
+        }
+       trendingComments(first: 3) {
+        nodes {
+          content
+          creator {
+          avatarImageUrl
+            name
+            userId
+            openId
+          }
+          votes {
+            totalCount
+          }
+        }
+      }
+  }
+}
