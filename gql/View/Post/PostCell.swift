@@ -102,7 +102,7 @@ struct PostCell: View {
             }
         }
         .background(.white, in: RoundedRectangle(cornerRadius: 10))
-        .padding(.horizontal, 12)
+//        .padding(.horizontal, 12)
         
         
     }

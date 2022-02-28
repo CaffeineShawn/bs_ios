@@ -21,20 +21,17 @@ struct InfinityPostsView: View {
                         Text("No content")
                     } else {
                         ForEach(postLoader.posts, id: \.node?.id) { post in
-                                if let post = post.node {
-//                                    PostCell(postId: post.id, content: post.content, images: post.images, creatorName: post.creator?.name ?? "小白板")
-                                    PostCell(post: post)
-                                        .padding(.top, 12)
-                                        .onAppear {
-
-                                            if post.id == postLoader.posts.last?.node?.id {
-                                                let _ = postLoader.fetchPost()
-                                            }
+                            if let post = post.node {
+                                PostCell(post: post)
+                                    .padding(.top, 12)
+                                    .padding(.horizontal, 12)
+                                    .onAppear {
+                                        if post.id == postLoader.posts.last?.node?.id {
+                                            postLoader.fetchLaterPost()
                                         }
-                                }
-                            
+                                    }
+                            }
                         }
-                    
                     }
                 }
             }
@@ -42,14 +39,12 @@ struct InfinityPostsView: View {
             .navigationTitle("BlankSpace")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
-                let _ = postLoader.fetchPost()
+                postLoader.fetchLaterPost()
+            }
+            .refreshable {
+                postLoader.fetchNewerPost()
             }
         }
- 
-        
-        
-        
-
     }
 }
 

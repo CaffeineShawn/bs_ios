@@ -13,8 +13,8 @@ struct ImageTabView: View {
         ZStack {
             Color.black
                 .ignoresSafeArea()
-            
-            TabView
+
+//            TabView
         }
     }
 }
