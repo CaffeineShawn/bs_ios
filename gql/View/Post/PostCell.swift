@@ -15,7 +15,7 @@ struct PostCell: View {
             if let post = post {
                 VStack {
                     Text(post.content)
-                        .font(.custom("kkp", fixedSize: 15))
+                        .font(.caption)
                         .foregroundColor(Color(hex: "#3E3E3E"))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal, 23)

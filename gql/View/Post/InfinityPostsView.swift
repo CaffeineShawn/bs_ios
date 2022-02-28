@@ -43,10 +43,6 @@ struct InfinityPostsView: View {
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 let _ = postLoader.fetchPost()
-                URLCache.shared.memoryCapacity = 1024*1024*512
-                print("cache mem size: \(URLCache.shared.memoryCapacity / (1024*1024))MB")
-                print("cache disk size: \(URLCache.shared.diskCapacity / (1024*1024))MB")
-
             }
         }
  

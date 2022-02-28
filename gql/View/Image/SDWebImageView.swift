@@ -53,38 +53,48 @@ struct SDWebImageView_Previews: PreviewProvider {
     static let duoGridItems = [GridItem(.flexible(), spacing: 7),GridItem(.flexible(), spacing: 7)]
     
     static var previews: some View {
-        VStack {
-            GeometryReader { proxy in
-                Group {
-                    switch images.count {
-                    case 1:
-                        SDWebImageView(urlString: images.first!, width: proxy.size.height, height: proxy.size.height)
-                    case 2...3:
-                        LazyVGrid(columns: triGridItems, spacing: 7) {
-                            ForEach(images, id: \.self) { url in
-                                SDWebImageView(urlString: url, width: proxy.size.width/3-14/3, height: proxy.size.height)
-                                    .frame(width: proxy.size.width/2-7/2, height: proxy.size.height)
+
+
+            VStack {
+                GeometryReader { proxy in
+                    Group {
+                        switch images.count {
+                        case 1:
+                            SDWebImageView(urlString: images.first!, width: proxy.size.height, height: proxy.size.height)
+                        case 2...3:
+                            LazyVGrid(columns: triGridItems, spacing: 7) {
+                                ForEach(images, id: \.self) { url in
+                                    SDWebImageView(urlString: url, width: proxy.size.width/3-14/3, height: proxy.size.height)
+                                        .frame(width: proxy.size.width/2-7/2, height: proxy.size.height)
+                                }
                             }
-                        }
-                    case 4...6:
-                        LazyVGrid(columns: triGridItems, spacing: 7) {
-                            ForEach(images, id: \.self) { url in
-                                SDWebImageView(urlString: url, width: proxy.size.width/3-14/3, height: 260/2-3.5)
-                                    .frame(width: proxy.size.width/3-14/3, height: proxy.size.height/2-3.5)
+                        case 4...6:
+                            LazyVGrid(columns: triGridItems, spacing: 7) {
+                                ForEach(images, id: \.self) { url in
+                                    SDWebImageView(urlString: url, width: proxy.size.width/3-14/3, height: (UIScreen.main.bounds.width-84)/3)
+                                        .frame(width: proxy.size.width/3-14/3, height: proxy.size.height/2-3.5)
+                                }
                             }
+                        default:
+                            fatalError()
                         }
-                    default:
-                        fatalError()
                     }
                 }
-            }
-            .frame(height: images.count > 3 ? 260 : 130)
-       
+                .frame(height: images.count > 3 ? (UIScreen.main.bounds.width-84)/3*2+7 : 130)
+               
 
-        }
-     
-        .padding(.horizontal, 7)
-        .background(Color.red)
+            }
+         
+            .padding(.horizontal, 35)
+            .background(Color.red)
+            .overlay {
+                Color.blue.opacity(0.2)
+                    .frame(
+                        width: UIScreen.main.bounds.width-70,
+                        height: (UIScreen.main.bounds.width-84)/3*2+7
+                    )
+            }
+       
         
     }
 }
