@@ -42,13 +42,13 @@ final class PostListLoader: ObservableObject {
         
     }
     
-    func fetchLaterPost() {
+    func fetchLaterPost(count: Int) {
         if hasNextPage {
             var relayPostQuery: PostWithRelayQuery
             if let endCursor = endCursor {
-                relayPostQuery = PostWithRelayQuery(first: 10, after: endCursor)
+                relayPostQuery = PostWithRelayQuery(first: count, after: endCursor)
             } else {
-                relayPostQuery = PostWithRelayQuery(first: 10)
+                relayPostQuery = PostWithRelayQuery(first: count)
             }
             DispatchQueue.global(qos: .background).async {
                 NetWork.shared.apollo.fetch(query: relayPostQuery) { result in

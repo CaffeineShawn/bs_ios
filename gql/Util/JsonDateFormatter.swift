@@ -20,7 +20,24 @@ class JsonDateFormatter {
         self.instance = f
     }
     
-    static func timeDiffFromNow(previousDate: Date) -> String {
+    func extractDateFromString(createAt: String) -> Date? {
+        var extracted: Date?
+        extracted = instance.date(from: createAt)
+        if extracted == nil {
+            let fallbackFormatter = DateFormatter()
+            fallbackFormatter.locale = Locale(identifier: "en_US_POSIX")
+            fallbackFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+            fallbackFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+            extracted = fallbackFormatter.date(from: createAt)
+        }
+        return extracted
+    }
+    
+    static func timeDiffFromNow(previousDate: Date?) -> String? {
+        guard let previousDate = previousDate else {
+            return nil
+        }
+
         let res: String
         let diff = previousDate.distance(to: Date())
         let minutes = diff / 60

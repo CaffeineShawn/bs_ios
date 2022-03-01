@@ -20,7 +20,6 @@ struct PostCell: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal, 23)
                         .padding(.top, 18)
-                    
                     if let images = post.images {
                         SDGridImageView(images: images)
                             .padding(.horizontal, 16)
@@ -68,31 +67,21 @@ struct PostCell: View {
                         .padding(.bottom, 7)
                         .padding(.horizontal, 23)
                     }
-                   
-                    
-                    PostUser(creatorAvatarUrl: post.creator?.avatarImageUrl , creatorName: post.creator?.name, votes:post.votes.totalCount, createAtString: JsonDateFormatter.timeDiffFromNow(previousDate: JsonDateFormatter.shared.instance.date(from: post.createdAt)!))
+                    PostUser(creatorAvatarUrl: post.creator?.avatarImageUrl , creatorName: post.creator?.name, votes:post.votes.totalCount, createAtString: JsonDateFormatter.timeDiffFromNow(previousDate: JsonDateFormatter.shared.extractDateFromString(createAt: post.createdAt)) ?? "一星期前")
                         .padding(.horizontal, 27)
                         .padding(.bottom, 7)
                     if let comments = post.trendingComments.nodes {
                         Group {
                             VStack(spacing: 0) {
                                 ForEach(comments, id: \.id) { comment in
-                                    CommentCell(creatorAvatarUrl: comment.creator?.avatarImageUrl, creatorName: comment.creator?.name, content: comment.content, votes: comment.votes.totalCount, createAtString: JsonDateFormatter.timeDiffFromNow(previousDate: JsonDateFormatter.shared.instance.date(from: comment.createdAt)!))
+                                    CommentCell(creatorAvatarUrl: comment.creator?.avatarImageUrl, creatorName: comment.creator?.name, content: comment.content, votes: comment.votes.totalCount, createAtString: JsonDateFormatter.timeDiffFromNow(previousDate: JsonDateFormatter.shared.extractDateFromString(createAt: comment.createdAt)) ?? "一星期前")
                                 }
                             }
                             .clipShape(RoundedRectangle(cornerRadius: 10))
-                            
-                            
-                            
                         }
                         .padding(.horizontal, 14)
                         .padding(.bottom, 14)
-//                        .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
-                    
-                    
-                        
-                   
                 }
             } else {
                 ProgressView()

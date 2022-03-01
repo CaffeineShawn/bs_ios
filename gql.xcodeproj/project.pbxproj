@@ -20,6 +20,7 @@
 		0F3AA38F27C37C02003AA94F /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 0F3AA38E27C37C02003AA94F /* ApolloWebSocket */; };
 		0F4635B827C9F1F5006DB55F /* SDGridImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4635B727C9F1F5006DB55F /* SDGridImageView.swift */; };
 		0F48375927C897950097CB68 /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F48375827C897950097CB68 /* CustomNavigationView.swift */; };
+		0F5875D327CE0A9A000C8E3A /* ImageTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5875D227CE0A9A000C8E3A /* ImageTabViewModel.swift */; };
 		0F63AE8727C4B2A80033F984 /* PostCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F63AE8627C4B2A80033F984 /* PostCellView.swift */; };
 		0F76A52327CB45FC0069FA5D /* JsonDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F76A52227CB45FC0069FA5D /* JsonDateFormatter.swift */; };
 		0F76A52527CB53A90069FA5D /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F76A52427CB53A90069FA5D /* PostCell.swift */; };
@@ -53,6 +54,7 @@
 		0F23E7C927C75957003DC0E0 /* CustomImageView.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift.swift; sourceTree = "<group>"; };
 		0F4635B727C9F1F5006DB55F /* SDGridImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDGridImageView.swift; sourceTree = "<group>"; };
 		0F48375827C897950097CB68 /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
+		0F5875D227CE0A9A000C8E3A /* ImageTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTabViewModel.swift; sourceTree = "<group>"; };
 		0F63AE8627C4B2A80033F984 /* PostCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellView.swift; sourceTree = "<group>"; };
 		0F76A52227CB45FC0069FA5D /* JsonDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDateFormatter.swift; sourceTree = "<group>"; };
 		0F76A52427CB53A90069FA5D /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				0FA090B427C61CB100AD67D8 /* PostListLoader.swift */,
 				0FE8479D27C67AB5000A7BA1 /* ImageLoader.swift */,
 				0FD0689627CA3142002BAEA0 /* SinglePostLoader.swift */,
+				0F5875D227CE0A9A000C8E3A /* ImageTabViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				0F76A52327CB45FC0069FA5D /* JsonDateFormatter.swift in Sources */,
 				0F0C20A527C376F400D6ECA0 /* ContentView.swift in Sources */,
 				0F76A52527CB53A90069FA5D /* PostCell.swift in Sources */,
+				0F5875D327CE0A9A000C8E3A /* ImageTabViewModel.swift in Sources */,
 				0FF795A927C3B0B3004A959E /* API.swift in Sources */,
 				0FF795B127C3CF20004A959E /* InfinityPostsView.swift in Sources */,
 				0FF795AE27C3C795004A959E /* LoginView.swift in Sources */,
