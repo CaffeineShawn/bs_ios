@@ -10,6 +10,12 @@ import SwiftUI
 struct PostCell: View {
     let post: PostWithRelayQuery.Data.PostsWithRelay.Edge.Node
 
+    func noChinese(imagesUrlString: [String]) -> [String] {
+        imagesUrlString.map { urlString in
+            urlString.escapeChinese() ?? ""
+        }
+    }
+    
     var body: some View {
         VStack {
             if let post = post {
@@ -21,49 +27,49 @@ struct PostCell: View {
                         .padding(.horizontal, 23)
                         .padding(.top, 18)
                     if let images = post.images {
-                        SDGridImageView(images: images)
+                        SDGridImageView(images: noChinese(imagesUrlString: images))
                             .padding(.horizontal, 16)
                             .padding(.bottom, 7)
                     }
                     if let id = post.subject?.id {
-                        HStack {
-                            Group {
-                                switch id {
-                                case "0x19198":
-                                    Label {
-                                        Text("1px life")
-                                            .fontWeight(.bold)
-                                    } icon: {
-                                        Image(systemName: "message")
-                                    }
-                                    .font(.caption)
-                                case "0x1ae65":
-                                    Label {
-                                        Text("板上钉钉")
-                                            .fontWeight(.bold)
-                                    } icon: {
-                                        Image(systemName: "message")
-                                    }
-                                    .font(.caption)
-                                default:
-                                    Label {
-                                        Text("拜托了!白板")
-                                            
-                                            .fontWeight(.bold)
-                                    } icon: {
-                                        Image(systemName: "message")
-                                    }
-                                    .font(.caption)
+                    HStack {
+                        Group {
+                            switch id {
+                            case "0x19198":
+                                Label {
+                                    Text("1px life")
+                                        .fontWeight(.bold)
+                                } icon: {
+                                    Image(systemName: "message")
                                 }
+                                .font(.caption)
+                            case "0x1ae65":
+                                Label {
+                                    Text("板上钉钉")
+                                        .fontWeight(.bold)
+                                } icon: {
+                                    Image(systemName: "message")
+                                }
+                                .font(.caption)
+                            default:
+                                Label {
+                                    Text("拜托了!白板")
+                                        
+                                        .fontWeight(.bold)
+                                } icon: {
+                                    Image(systemName: "message")
+                                }
+                                .font(.caption)
                             }
-                            .frame(alignment: .leading)
-                            .foregroundColor(Color("SubjectTextColor"))
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 7)
-                            .background(Color("SubjectBackgroundColor"))
-                            .clipShape(RoundedRectangle(cornerRadius: 5))
-                            Spacer()
                         }
+                        .frame(alignment: .leading)
+                        .foregroundColor(Color("SubjectTextColor"))
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 7)
+                        .background(Color("SubjectBackgroundColor"))
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                        Spacer()
+                }
                         .padding(.bottom, 7)
                         .padding(.horizontal, 23)
                     }
@@ -85,14 +91,8 @@ struct PostCell: View {
                 }
             } else {
                 ProgressView()
-//                    .onAppear {
-//                        singlePostLoader.fetch(postId: postId)
-//                    }
             }
         }
         .background(.white, in: RoundedRectangle(cornerRadius: 10))
-//        .padding(.horizontal, 12)
-        
-        
     }
 }

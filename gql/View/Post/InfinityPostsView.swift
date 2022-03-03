@@ -12,7 +12,6 @@ struct InfinityPostsView: View {
     
     @StateObject var postLoader = PostListLoader()
     
-    
     var body: some View {
         ZStack {
             ScrollView(showsIndicators: false) {
@@ -44,9 +43,7 @@ struct InfinityPostsView: View {
             .onAppear {
                 postLoader.fetchLaterPost(count: 10)
             }
-            .refreshable {
-                postLoader.fetchNewerPost()
-            }
+            
         }
     }
 }
