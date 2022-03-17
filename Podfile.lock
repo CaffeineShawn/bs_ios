@@ -1,0 +1,33 @@
+PODS:
+  - Apollo (0.51.1):
+    - Apollo/Core (= 0.51.1)
+  - Apollo/Core (0.51.1)
+  - SDWebImage (5.12.5):
+    - SDWebImage/Core (= 5.12.5)
+  - SDWebImage/Core (5.12.5)
+  - SDWebImageSwiftUI (2.0.2):
+    - SDWebImage (~> 5.10)
+  - SQLite (0.1.23)
+
+DEPENDENCIES:
+  - Apollo
+  - SDWebImage
+  - SDWebImageSwiftUI
+  - SQLite
+
+SPEC REPOS:
+  trunk:
+    - Apollo
+    - SDWebImage
+    - SDWebImageSwiftUI
+    - SQLite
+
+SPEC CHECKSUMS:
+  Apollo: 558f902b858166bd39d8ce869a0f5ebfcc6e359a
+  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
+  SDWebImageSwiftUI: 8a3923c95108312b03a599ec1498754af55a6819
+  SQLite: 25f557f4203527054287da5ac566b8127ce93ba9
+
+PODFILE CHECKSUM: a4a3fcd99e025f9c28e2dadfce1fbb692b6ebe2c
+
+COCOAPODS: 1.11.3
